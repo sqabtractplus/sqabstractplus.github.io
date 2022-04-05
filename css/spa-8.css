@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Satisfy&family=Oswald:wght@200&family=Poppins:wght@200;400;700&family=Open+Sans:wght@200;400;500;700&family=Roboto:wght@200;400;500;700;900&display=swap");
+/* font for logo */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 html {
   scroll-behavior: smooth;
 }
@@ -369,7 +371,7 @@ label {
     min-height: 320px!important;
   }
   .baffinFont{
-    font-size:52px;
+    /*font-size:52px; */
     font-family: 'Oswald',"Poppins",'Roboto', sans-serif;
     /* text-transform: lowercase; */
     letter-spacing: 0px;    
@@ -1184,11 +1186,66 @@ label {
   }
 } /* not for small screen */
 
+@media (min-width: 350px) {
+  .fs_lcAlign { /* centrally align on mobile */
+    margin: 0px auto;  
+    text-align: center;
+  }
+}@media (min-width: 576px) {
+  .fs_lcAlign { /* left align everywhere else */
+    text-align: left;
+  }
+}
+
+
+@media (min-width: 350px) {
+  .fs_rcAlign { /* centrally align on mobile */
+    margin: 0px auto;  
+    text-align: center;
+  }
+}@media (min-width: 576px) {
+  .fs_rcAlign { /* left align everywhere else */
+    text-align: right;
+  }
+}
+
+
+@media (min-width: 350px) {
+  .fs_rcfloat { /* centrally align on mobile */
+	float:none;
+  }
+}@media (min-width: 576px) {
+  .fs_rcfloat { /* centrally align on mobile */
+	float:right;
+  }
+}
+
+
+
+
+
 /* Responsive text */
 /* responsive headlines  */
+
+@media (min-width: 350px) {
+  .fs_ls { /* letter spacing */
+    letter-spacing: 3px
+  }
+}
+@media (min-width: 576px) {
+  .fs_ls { /* letter spacing */
+    letter-spacing: 5px
+  }
+}
+@media (min-width: 768px) {
+  .fs_ls { /* letter spacing */
+    letter-spacing: 10px
+  }
+}
+
 @media (min-width: 350px) {
   .fs_resp_HL {
-    font-size: 48px;
+    font-size: 34px;
     font-family: "Poppins", "Roboto", "Open Sans", sans-serif;
   }
 } /* small devices */
@@ -1218,7 +1275,7 @@ label {
 } /* small devices */
 @media (min-width: 576px) {
   .fs_resp_SL {
-    font-size: 40px;
+    font-size: 30px;
     font-family: "Poppins", "Roboto", "Open Sans", sans-serif;
   }
   .fs_productHL{
