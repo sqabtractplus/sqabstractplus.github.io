@@ -80,6 +80,31 @@
   background-repeat: no-repeat;
 }
 /*MODAL*/
+/* Modal width */
+@media (min-width: 350px) {
+  .fs_modalWidth_Small { 
+    max-width:80%;
+  }  .fs_modalWidth_Big { 
+    max-width:90%;
+  }
+}
+@media (min-width: 576px) {
+  .fs_modalWidth_Small { 
+    max-width:80%;
+  }.fs_modalWidth_Big { 
+    max-width:90%;
+  }
+}
+@media (min-width: 768px) {
+  .fs_modalWidth_Small { 
+     max-width:40%;
+  }.fs_modalWidth_Big { 
+    max-width:70%;
+  }
+}
+
+
+
 /* .modal-content {
   margin-top: 25%;
 }
@@ -99,6 +124,7 @@
   max-width: 90% !important;
 } */
 /* Expand width as required */
+
 
 /* Actual contents should go in the below boxes. FOR the moment not used due to less time for testing **/
 .fs_contentBoxFull {
@@ -195,6 +221,12 @@
   margin-right: auto; */
 }
 
+
+.fs_containerMargin {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 /*relative position*/
 .fs_relative {
   position: relative;
@@ -212,3 +244,105 @@
   min-height: 650px;
   position: relative;
 }
+
+/* last two sections ALAM 8 */
+CssOfLastTwoSection.txt
+Who has access
+
+System properties
+Type
+Text
+Size
+2 KB
+Storage used
+2 KBOwned by Flexistrategy.com
+Location
+10.5.2022
+Owner
+A. A
+Modified
+May 10, 2022 by A. A
+Opened
+4:42 PM by me
+Created
+May 10, 2022
+No description
+Viewers can download
+@media (min-width: 768px) {
+ 
+  .recentWorkTextCardSpace{
+    min-height: 1px;width:100%;
+  }
+  .carouselCardWithDetails{
+    min-height: 500px;
+  }
+  .carouselCardWithDetailsImage{
+    min-height: 320px;
+  }
+  .indicatorImgLocal{width:60px!important;height: 60px!important;}
+  
+  .bgLinearGTOChangeOnDispay{
+    background: linear-gradient(90deg,#4f48874f 0% 50%, #891a1a63 50% 100%);
+  }
+}
+@media (min-width: 576px) {
+
+  .bgLinearGTOChangeOnDispay{
+    background: linear-gradient(180deg, #4f48874f 0% 73%, #891a1a63 50% 100%);
+  }
+  .recentWorkTextCardSpace{
+    min-height: 1px;width:100%;
+  }
+  .carouselCardWithDetails{
+    min-height: 500px;
+  }
+  .carouselCardWithDetailsImage{
+    min-height: 320px;
+  }
+  .indicatorImgLocal{width:50px!important;height: 50px!important;}
+  
+}
+@media (min-width: 350px) {
+  
+  .bgLinearGTOChangeOnDispay{
+    background: linear-gradient(180deg, #4f48874f 0% 73%, #891a1a63 50% 100%);
+  }
+  .recentWorkTextCardSpace{
+    min-height: 31px;
+	width:100%;
+  }
+  .carouselCardWithDetails{
+    min-height: 700px;
+  }
+  .carouselCardWithDetailsImage{
+    min-height: 320px;
+  }
+  .indicatorImgLocal{width:40px!important;height: 40px!important;}
+}
+/* carousal indicator */
+@media (min-width: 350px) {	
+	.fs_carousalIndicator{
+		position: relative;
+		top: -377px;
+	}
+}@media (min-width: 576px) {
+	.fs_carousalIndicator{
+		position: relative;
+		top: 10px;
+	}
+}
+.carousel-indicators .active {
+	border: 2px solid #f1b815; 
+}
+
+.fs_WH90{
+	width:90%; height:90%;
+	left:5%; top:5%;
+}
+.fs_navAct{
+	border-bottom: 1px solid red;
+}
+/* for scroll spy body relative and <body tag add data-spy="scroll" data-target="#navbar-example" */
+body { position: relative; }
+
+      
