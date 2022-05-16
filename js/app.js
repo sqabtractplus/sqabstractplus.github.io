@@ -5,7 +5,6 @@ $(document).ready(function () {
         $('section[id]').each(function (index, elem) {
             var offsetTop = $(elem).offset().top;
             var outerHeight = $(this).outerHeight(true);
-
             if( windowTop > (offsetTop - 91) && windowTop < ( offsetTop + outerHeight)) {
                 var elemId = $(elem).attr('id');
                 $("nav ul li a.active").removeClass('active fs_navAct');
@@ -114,10 +113,10 @@ $(document).on("click",  function(e) {
     if(!navClicked && $(e.target).attr("class").indexOf("modalButton") !== -1 ){
         //ELSE assume modal handle click
         //MODAL click handler
-        var ClickedButton = $(e.target).attr("modal-key");// modal-key is key for modal
-        var origClicked = ClickedButton;
-        if(ClickedButton.indexOf('pd_') !== -1 ){ 
-            ClickedButton = "pd_n"; //data use only for header 
+        var clickedKey = $(e.target).attr("modal-key");// modal-key is key for modal
+        var origClicked = clickedKey;
+        if(clickedKey.indexOf('pd_') !== -1 ){ 
+            clickedKey = "pd_n"; //data use only for header 
         }
         
         var modalBodyData =  ''; //"H:About~topicData:TopicDetails,TopicDetails,TopicDetails,TopicDetails";
@@ -125,7 +124,7 @@ $(document).on("click",  function(e) {
         var subHeaderData = '';
         var bodyData = '';
         //get key value pair
-        modalBodyData = modalData[ClickedButton].split("~"); //about
+        modalBodyData = modalData[clickedKey].split("~"); //about
         headerData = 	(modalBodyData[1].split(":"))[1];	 //take value - T title
         subHeaderData =  (modalBodyData[2].split(":"))[1];	 //take value - T
         bodyData = 	(modalBodyData[3].split(":"))[1]; //take value
@@ -134,10 +133,10 @@ $(document).on("click",  function(e) {
         //$(".modal-body").html("<h3>" + headerData + "</h3> <p>"+ bodyData +"</p> ");
         $("#modHeader").html('<div style="font-size:25px;">' + headerData+" " + '<span style="font-size: 19px;color: #79bed3;">' + subHeaderData + '</span></div>');
         var workBody = '<div class="fs_resp_Sub_Sub_SL mb-1 mt-2 font-weight-bold">THE CHILD ARTIST</div><div class="fs_bdyTxt">As a child I fell in love with paints and brushes. I started painting earlier in high school and continued painting throughtout my college life. These were hobby paintings, however passion for art was ignited. </div><div class="fs_resp_Sub_Sub_SL mb-1 mt-2 font-weight-bold">RETIREMENT & BIRTH OF PASSIONATE ABSTRACTION ARTIST.</div><div class="fs_bdyTxt">Nearly 30 years of extensive world travel as corporate professional provided exposure to diversity of life, beauty of nature and stunning diversity in world of arts. Thus I learnt the precious nuances of Art - my Inner Passion.</div><div class="mt-3 fs_bdyTxt">With exposure to richness of world art, passion for this fine art and having ample time post retirement I\'ve devoted last 20 years to painting and learning the craft fully. In this journey I did lot of realistic & creative landscape, cityscape, seascape etc. in watercolor and acrylic. </div><div class="mt-3 fs_bdyTxt">Today after mastering various forms, techniques and producing substantial international level work I\'ve adapted Action Painting and embraced \'Abstract Expressionism\' which me and patrons immensely enjoy.</div><div class="fs_resp_Sub_Sub_SL mb-1 mt-2 font-weight-bold">MY PAINTING PROCESS</div><div class="fs_bdyTxt">I start with just broad ideas in mind. Thereafter my inner impulses combines multilayered pigments and power strokes. The unpredicted forms by power strokes in messy paintings infuse life and create vibrations in minds of the viewers. </div><div class="mt-3 fs_bdyTxt">Deliberate choice to limit palettes produces richness and elegance. Similarly I avoid easel and my paintings come from canvas placed flat on plywood boards. The paintings are build-up by pouring fluid / heavy acrylic paints with spoiled brushes, sticks, plastic bottles, spoons, paper glasses, etc.</div> <div class="mt-3 fs_bdyTxt">Before every painting each canvas is thickly gessoed.</div><div class="fs_resp_Sub_Sub_SL mb-1 mt-2 font-weight-bold">EXHIBITIONS & MEDIA COVERAGE</div><div class="fs_bdyTxt">My work is exhibited at famous art galleries at Mumbai&  Pune (India), UK and Canada. And media testimonials coverage by prominent newspapers like Times of India, Indian Express.</div>';
-        if(ClickedButton == 'abtme'){ //bigger dialogue box
+        if(clickedKey == 'abtme'){ //bigger dialogue box
             $("#modBody").html( "<div style='font-size: 22px;padding: 15px;border: 20px solid #cfe8f0;'>" + workBody + "</div>");
             $("#dialogueWidth").removeClass("fs_modalWidth_Small").addClass("fs_modalWidth_Big");
-        }else if(ClickedButton.indexOf('pd_') !== -1){
+        }else if(clickedKey.indexOf('pd_') !== -1){ 
             //find out product details and it's key
             var pdKey = bodyData;
             var pdData = pd[origClicked];
@@ -153,7 +152,7 @@ $(document).on("click",  function(e) {
             $("#dialogueWidth").removeClass("fs_modalWidth_Big").addClass("fs_modalWidth_Small");
         }else{ //small modal dialogue box
             $("#modBody").html("<p class='fs_bdyTxt' style='padding: 15px;border: 20px solid #cfe8f0;'>"+ bodyData +"</p>");
-            $("#dialogueWidth").removeClass("fs_modalWidth_Small").addClass("fs_modalWidth_Big");
+            $("#dialogueWidth").removeClass("fs_modalWidth_Big").addClass("fs_modalWidth_Small");
         }
         $('#myModal').modal('show');
     } //!navClicked
